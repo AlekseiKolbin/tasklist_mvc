@@ -8,7 +8,7 @@ return [
 	],
 
 	'task_list_mvc/tasklist' => [
-		'controller' => 'main',
+		'controller' => 'task',
 		'action' => 'tasklist',
 	],
 ];

@@ -12,7 +12,8 @@ class Router
 	public function __construct()
 	{
 		$arr = require 'config/routes.php';
-		foreach ($arr as $key => $val) {
+		foreach ($arr as $key => $val) 
+		{
 			$this->add($key, $val);
 		}
 	}
@@ -42,7 +43,8 @@ class Router
 		if ($this->match()) 
 		{
 			$path = 'controllers\\'.ucfirst($this->params['controller']).'Controller';
-			if (class_exists($path)) {
+			if (class_exists($path)) 
+			{
 				$action = $this->params['action'].'Action';
 				if (method_exists($path, $action)) {
 					$controller = new $path($this->params);

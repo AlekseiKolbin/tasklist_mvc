@@ -1,6 +1,4 @@
 <?
-require 'lib/dev.php';
-
 use core\router;
 
 

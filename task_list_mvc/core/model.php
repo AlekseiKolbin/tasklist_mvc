@@ -1,16 +1,15 @@
 <?
-
 namespace core;
-
-use lib\Db;
+use mysqli;
 
 abstract class Model
 {	
 	public $db;
-
+	
 	public function __construct()
 	{
-		$this->db = new Db;
+		$this->db = new mysqli('localhost', 'root', '', 'tasklist');
+		session_start();
 	}
 }
 

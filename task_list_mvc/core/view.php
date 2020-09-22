@@ -1,5 +1,4 @@
 <?
-
 namespace core;
 
 class View
@@ -25,11 +24,16 @@ class View
 			$content = ob_get_clean();
 			require 'views/layouts/'.$this->layout.'.php';
 		}
-		else
+		else 
 		{
-			echo 'Вид не найден'.$this->path;
-		}
-		
+			echo "Вид ".$this->path." не найден";
+		}		
+	}
+
+	public function redirect($url)
+	{
+		header('location: '.$url);
+		exit;
 	}
 
 	public static function errorCode($code)
@@ -41,14 +45,6 @@ class View
 		}
 		exit;
 	}
-
-	public function redirect($url)
-	{
-		header('location: '.$url);
-		exit;
-	}
-
-
 }
 
 ?>
